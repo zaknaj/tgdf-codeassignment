@@ -1,38 +1,272 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.base {
+  padding-left: 320px;
+  background: #edf5fd;
+  padding-top: 155px;
   min-height: 100vh;
+  padding-right: 80px;
+  padding-bottom: 80px;
+}
+
+.main-content {
+  max-width: 1200px;
+}
+
+.content-block .block-title {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.content-block .block-content {
+  background: #ffffff;
+  box-shadow: 0px 4px 15px rgba(0, 62, 119, 0.04);
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 70px;
+}
+
+.products-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.product {
+  height: 100px;
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  transition: 0.15s all;
+  cursor: pointer;
+}
+
+.product:hover {
+  transform: scale(1.1);
+}
+
+.product:active {
+  transform: scale(1.05);
+}
+
+.product-neutral {
+  background: #ffbc57;
+}
+
+.product-positive {
+  background: #56cd38;
+}
+
+.product-negative {
+  background: #e76f6f;
+}
+
+.navbar {
+  height: 100px;
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.05);
+  position: fixed;
+  top: 0;
+  width: calc(100% - 250px);
+  left: 250px;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  z-index: 98;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.side-menu {
+  background: #0085ff;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  padding-left: 30px;
   color: white;
+  z-index: 99;
 }
 
-.App-link {
-  color: #61dafb;
+.side-menu .client-logo {
+  height: 36px;
+  text-align: center;
+  margin-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 90px;
+  padding-right: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-block {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 40px;
+  width: 200px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 5px;
+  padding: 20px 0;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.15s all;
+}
+
+.profile-block .initials-circle {
+  border-radius: 100px;
+  background: #aed8ff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #0085ff;
+  height: 50px;
+  width: 50px;
+}
+
+.profile-block .profile-name {
+  margin: 10px 0 5px;
+}
+
+.profile-block .myprofile-link {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.5;
+}
+
+.profile-block:hover {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.profile-block:active {
+  transform: translateX(-50%) scale(0.97);
+}
+
+.profile-block:hover .myprofile-link {
+  text-decoration: underline;
+}
+
+.side-menu-item {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  margin-bottom: 8px;
+  color: white;
+  border-radius: 5px 0px 0px 5px;
+  padding-left: 20px;
+  transition: 0.15s all;
+  cursor: pointer;
+  position: relative;
+}
+
+.side-menu-item:hover {
+  background: #007aea;
+}
+
+.side-menu-item:active {
+  background: #0066c3;
+}
+
+.side-menu-item.active {
+  background: white;
+  color: #0085ff;
+}
+
+.side-menu-item.active .side-menu-chevron {
+  display: block;
+}
+
+.side-menu-item .side-menu-item-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.side-menu-chevron {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.select {
+  display: flex;
+  align-items: center;
+  color: #abb2ba;
+  font-size: 14px;
+  position: relative;
+
+  transition: 0.15s all;
+}
+
+.select:hover select {
+  border: 1px solid #b6c2cf;
+}
+
+.select > div {
+  margin-right: 16px;
+}
+.select select {
+  height: 40px;
+  border: 1px solid #dadee2;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: white;
+  appearance: none;
+  outline: none;
+  padding: 0;
+  width: 200px;
+  padding-left: 20px;
+  font-family: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.select-chevron {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: rotate(90deg) translateX(-50%);
+}
+
+.summary-content {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.text-block {
+  text-align: center;
+  position: relative;
+  margin-right: 140px;
+}
+
+.text-block-number {
+  font-size: 64px;
+  font-weight: bold;
+  color: #0085ff;
+}
+
+.text-block-title {
+  font-size: 12px;
+  color: #abb2ba;
+}
+
+.progress-icon {
+  position: absolute;
+  right: -25px;
+  top: 15px;
 }
